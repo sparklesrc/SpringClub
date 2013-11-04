@@ -13,7 +13,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "administrador")
 public class Administrador {
- 
     
     @Id
     @GeneratedValue
