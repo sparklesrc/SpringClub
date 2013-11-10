@@ -2,9 +2,9 @@
 package app.dao;
 
 import app.model.Servicio;
-import app.zelper.GenericDAO;
+import app.zelper.GenericCrud;
 
 
-public interface ServicioDAO extends GenericDAO<Servicio> {
+public interface ServicioDAO extends GenericCrud<Servicio> {
     
 }
