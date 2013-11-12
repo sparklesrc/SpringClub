@@ -1,6 +1,3 @@
-
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -20,30 +17,37 @@
                 <%@include file="/public/menuAdm.jsp" %>
                 <div class="span9">
                     <div class="row">
-                        <h1> Nuevo Servicio </h1>
+                        <h1> Nuevo Local </h1>
                     </div>
 
-                    <form action="<%=contextPath%>/adm/servicio/save" method="POST" class="form-horizontal">
+                    <form action="<%=contextPath%>/adm/local/save" method="POST" class="form-horizontal">
 
-                        <input type="hidden" value="${servicio.id}" name="id">
+                        <input type="hidden" value="${local.id}" name="id">
 
                         <div class="control-group">
-                            <label class="control-label">Descripcion</label>
+                            <label class="control-label">Descripción</label>
                             <div class="controls">
-                                <input type="text" name="descripcion" value="${servicio.descripcion}">
+                                <input type="text" name="descripcion" value="${local.descripcion}">
                             </div>
                         </div>
 
                         <div class="control-group">
-                            <label class="control-label">Costo Hora</label>
+                            <label class="control-label">Dirección</label>
                             <div class="controls">
-                                <input type="text" name="costoHora" value="${servicio.costoHora}">
+                                <input type="text" name="direccion" value="${local.direccion}">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Teléfono</label>
+                            <div class="controls">
+                                <input type="text" name="telefono" value="${local.telefono}">
                             </div>
                         </div>
 
                         <div class="control-group">
                             <div class="controls">
-                                <a class="btn" href="<%=contextPath%>/adm/servicio">Cancelar</a>
+                                <a class="btn" href="<%=contextPath%>/adm/local">Cancelar</a>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                             </div>
                         </div>
@@ -57,7 +61,3 @@
         <%@include file="/public/footer.jsp" %>
     </body>
 </html>
-
-
-
-
