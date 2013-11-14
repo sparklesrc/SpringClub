@@ -1,9 +1,9 @@
-
 package app.dao.hibernate;
 
 import app.dao.BaseHibernateDAO;
 import app.dao.PersonaDAO;
 import app.model.Persona;
+import app.zelper.RolesEnum;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository("personaDAO")
-public class PersonaDAOH extends BaseHibernateDAO implements PersonaDAO{
- 
+public class PersonaDAOH extends BaseHibernateDAO implements PersonaDAO {
+
     public List<Persona> list() {
         Criteria criteria = this.getSession().createCriteria(Persona.class);
         return criteria.list();
@@ -31,13 +31,21 @@ public class PersonaDAOH extends BaseHibernateDAO implements PersonaDAO{
 
     @Transactional
     public void update(Persona t) {
-        this.getSession().update(t);
+        this.getSession().merge(t);
     }
 
     @Transactional
     public void delete(Persona t) {
         this.getSession().delete(t);
     }
-    
-    
+
+    @Override
+    public List<Persona> listAdministrador() {
+        Criteria criteria = this.getSession().createCriteria(Persona.class);
+        criteria.createCriteria("usuario")
+                .createCriteria("usuarioRol")
+                .add(Restrictions.eq("authority", RolesEnum.ADMIN.getValue()));
+        return criteria.list();
+    }
+
 }

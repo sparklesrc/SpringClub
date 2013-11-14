@@ -31,7 +31,7 @@ public class SocioDAOH extends BaseHibernateDAO implements SocioDAO {
 
     @Transactional
     public void update(Socio t) {
-        this.getSession().update(t);
+        this.getSession().merge(t);
     }
 
     @Transactional

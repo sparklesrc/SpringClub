@@ -43,7 +43,7 @@ public class CampoDAOH extends BaseHibernateDAO implements CampoDAO {
 
     @Transactional
     public void update(Campo t) {
-        this.getSession().update(t);
+        this.getSession().merge(t);
     }
 
     @Transactional

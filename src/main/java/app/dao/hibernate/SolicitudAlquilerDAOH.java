@@ -32,7 +32,7 @@ public class SolicitudAlquilerDAOH extends BaseHibernateDAO implements Solicitud
 
     @Transactional
     public void update(SolicitudAlquiler t) {
-        this.getSession().update(t);
+        this.getSession().merge(t);
     }
 
     @Transactional

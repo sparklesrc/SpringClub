@@ -1,13 +1,11 @@
 package app.model;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -46,10 +44,8 @@ public class Persona implements Serializable {
     
     @OneToOne(mappedBy = "persona", fetch = FetchType.LAZY)
     private Socio socio;
+  
     
-    @OneToOne(mappedBy = "persona", fetch = FetchType.LAZY)
-    private Administrador administrador;
-
     public Persona() {
     }
 
@@ -137,17 +133,7 @@ public class Persona implements Serializable {
         this.socio = socio;
     }
 
-    public Administrador getAdministrador() {
-        return administrador;
+    public String getFullName(){
+        return this.nombres + " "+ this.paterno +" "+this.materno;
     }
-
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
-    }
-
-    
-    
-    
-    
-    
 }

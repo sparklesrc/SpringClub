@@ -31,7 +31,7 @@ public class UsuarioRolDAOH extends BaseHibernateDAO implements UsuarioRolDAO{
 
     @Transactional
     public void update(UsuarioRol t) {
-        this.getSession().update(t);
+        this.getSession().merge(t);
     }
 
     @Transactional

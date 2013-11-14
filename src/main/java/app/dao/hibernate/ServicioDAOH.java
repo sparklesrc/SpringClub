@@ -30,7 +30,7 @@ public class ServicioDAOH extends BaseHibernateDAO implements ServicioDAO {
 
     @Transactional
     public void update(Servicio t) {
-        this.getSession().update(t);
+        this.getSession().merge(t);
     }
 
     @Transactional

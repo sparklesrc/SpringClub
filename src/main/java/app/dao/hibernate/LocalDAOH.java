@@ -31,7 +31,7 @@ public class LocalDAOH extends BaseHibernateDAO implements LocalDAO {
 
     @Transactional
     public void update(Local t) {
-        this.getSession().update(t);
+        this.getSession().merge(t);
     }
 
     @Transactional
