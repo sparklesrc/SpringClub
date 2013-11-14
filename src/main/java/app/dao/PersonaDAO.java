@@ -2,9 +2,9 @@
 package app.dao;
 
 import app.model.Persona;
-import app.zelper.GenericDAO;
+import app.zelper.GenericCrud;
 
 
-public interface PersonaDAO extends GenericDAO<Persona> {
+public interface PersonaDAO extends GenericCrud<Persona> {
     
 }

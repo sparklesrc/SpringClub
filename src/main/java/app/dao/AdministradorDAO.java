@@ -2,9 +2,9 @@
 package app.dao;
 
 import app.model.Administrador;
-import app.zelper.GenericDAO;
+import app.zelper.GenericCrud;
 
 
-public interface AdministradorDAO extends GenericDAO<Administrador>{
+public interface AdministradorDAO extends GenericCrud<Administrador>{
     
 }

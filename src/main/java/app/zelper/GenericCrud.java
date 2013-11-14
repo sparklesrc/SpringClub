@@ -2,7 +2,7 @@ package app.zelper;
 
 import java.util.List;
 
-public interface GenericDAO<T> {
+public interface GenericCrud<T> {
 
     public List<T> list();
 

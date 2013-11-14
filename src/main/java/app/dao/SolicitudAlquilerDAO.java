@@ -2,9 +2,9 @@
 package app.dao;
 
 import app.model.SolicitudAlquiler;
-import app.zelper.GenericDAO;
+import app.zelper.GenericCrud;
 
 
-public interface SolicitudAlquilerDAO extends GenericDAO<SolicitudAlquiler>{
+public interface SolicitudAlquilerDAO extends GenericCrud<SolicitudAlquiler>{
     
 }
