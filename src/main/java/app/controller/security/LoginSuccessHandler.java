@@ -44,5 +44,8 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
             }
         }
         
+        super.onAuthenticationSuccess(request, response, authentication);
+        
+        
     }
 }

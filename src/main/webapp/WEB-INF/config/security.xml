@@ -6,6 +6,11 @@
 
     <http auto-config="true" use-expressions="true" disable-url-rewriting="true">
         
+        <intercept-url pattern="/socio/**" access="hasAnyRole('SOCIO')"/>
+        <intercept-url pattern="/adm/**" access="hasAnyRole('ADMIN')"/>
+        <intercept-url pattern="/**" access="permitAll"/>
+        
+        
         <form-login
             login-page="/login"
             authentication-failure-url="/login?error=true"

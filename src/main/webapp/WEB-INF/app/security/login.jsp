@@ -14,7 +14,7 @@
 
         <div class="container-fluid">
             <div class="row-fluid">
-                <form class="form-signin" action="/app/j_spring_security_check" method="post">
+                <form class="form-signin" action="<%=contextPath%>/j_spring_security_check" method="post">
                     <h2 class="form-signin-heading">Ingresar</h2>
                     <input type="text" class="input-block-level" placeholder="Email address" name="j_username">
                     <input type="password" class="input-block-level" placeholder="Password"  name="j_password">
