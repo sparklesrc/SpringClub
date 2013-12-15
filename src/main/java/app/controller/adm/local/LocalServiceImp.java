@@ -1,6 +1,5 @@
 package app.controller.adm.local;
 
-import app.controller.adm.local.*;
 import app.dao.LocalDAO;
 import app.model.Local;
 import java.util.List;

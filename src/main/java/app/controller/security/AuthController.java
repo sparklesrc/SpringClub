@@ -7,7 +7,14 @@ import app.zelper.RolesEnum;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
+//En esta clase se esta tomando desde la raiz de la pagina por eso aqui colocare
+//LA BIENVENIDA DE LA PAGINA... EL HOME.jsp
+
 
 @Controller
 public class AuthController {
@@ -34,5 +41,13 @@ public class AuthController {
         }
 
         return retorno;
+    }
+
+    //Este metodo dara el HOME.JSP
+    
+    @RequestMapping(method = RequestMethod.GET)
+    public String index(Model model) {
+
+        return "home/home";
     }
 }
