@@ -28,8 +28,7 @@ public class AdminController {
     @RequestMapping("new")
     public String nuevo(Model model) {
 
-       
-        
+           
         
         model.addAttribute("admin", new Persona());
 
